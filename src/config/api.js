@@ -8,7 +8,8 @@ const api = axios.create({
     headers: {
         'Content-Type': 'application/json',
     },
-    withCredentials: true,
+    // withCredentials can be removed if not using cookies, which simplifies CORS
+    // withCredentials: true,
 });
 
 // Production-grade JWT interceptor
@@ -26,8 +27,11 @@ api.interceptors.response.use(
     (error) => {
         if (error.response?.status === 401) {
             localStorage.removeItem('xiwat_token');
-            // Avoid infinite loops if already on login
-            if (!window.location.pathname.includes('/login')) {
+            localStorage.removeItem('xiwat_auth');
+
+            // Only redirect if NOT on login or register pages to avoid infinite loops/reloads
+            const path = window.location.pathname;
+            if (!path.includes('/login') && !path.includes('/register')) {
                 window.location.href = '/login';
             }
         }

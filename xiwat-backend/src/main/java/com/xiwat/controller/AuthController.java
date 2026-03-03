@@ -25,14 +25,7 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request) {
-        String token = authService.login(request.getEmail(), request.getPassword());
-
-        // Fetch user again for response metadata or pass it through service
-        // For simplicity, returning basic info with token
-        return ResponseEntity.ok(AuthResponse.builder()
-                .token(token)
-                .email(request.getEmail())
-                .name("User") // Placeholder, real name can be added to JWT or fetched
-                .build());
+        AuthResponse response = authService.login(request.getEmail(), request.getPassword());
+        return ResponseEntity.ok(response);
     }
 }

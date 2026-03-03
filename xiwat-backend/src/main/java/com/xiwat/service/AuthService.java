@@ -37,7 +37,7 @@ public class AuthService {
         repository.save(user);
     }
 
-    public String login(String email, String password) {
+    public com.xiwat.dto.AuthResponse login(String email, String password) {
         User user = repository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("Invalid credentials"));
 
@@ -57,7 +57,13 @@ public class AuthService {
                     .roles(user.getRole().name())
                     .build();
 
-            return jwtService.generateToken(Map.of("name", user.getName()), userDetails);
+            String token = jwtService.generateToken(Map.of("name", user.getName()), userDetails);
+
+            return com.xiwat.dto.AuthResponse.builder()
+                    .token(token)
+                    .email(user.getEmail())
+                    .name(user.getName())
+                    .build();
         } catch (Exception e) {
             increaseFailedAttempts(user);
             throw new RuntimeException("Invalid credentials");

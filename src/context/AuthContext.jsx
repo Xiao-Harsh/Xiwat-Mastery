@@ -34,6 +34,7 @@ export const AuthProvider = ({ children }) => {
             setIsAuthenticated(true);
             setUser(userData);
             localStorage.setItem('xiwat_auth', 'true');
+            localStorage.setItem('xiwat_token', data.token); // CRITICAL: Save the token for subsequent requests
             localStorage.setItem('xiwat_user', JSON.stringify(userData));
             return true;
         } catch (error) {
@@ -79,6 +80,7 @@ export const AuthProvider = ({ children }) => {
         setIsAuthenticated(false);
         setUser(null);
         localStorage.removeItem('xiwat_auth');
+        localStorage.removeItem('xiwat_token');
         localStorage.removeItem('xiwat_user');
     };
 
