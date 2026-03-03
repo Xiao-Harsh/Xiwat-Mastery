@@ -10,9 +10,9 @@ import java.util.Map;
 public class HealthController {
 
     @GetMapping("/health")
-    public Map<String, String> healthCheck() {
-        return Map.of(
+    public java.util.Map<String, String> healthCheck() {
+        return java.util.Map.of(
                 "status", "UP",
-                "environment", System.getenv("RENDER") != null ? "PRODUCTION" : "DEVELOPMENT");
+                "environment", "DEVELOPMENT");
     }
 }
