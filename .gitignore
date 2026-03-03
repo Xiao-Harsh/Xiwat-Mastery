@@ -1,0 +1,32 @@
+# --- Frontend (Vite/React) ---
+node_modules/
+dist/
+dist-ssr/
+*.local
+.env
+.env.*
+!.env.example
+
+# --- Backend (Spring Boot) ---
+xiwat-backend/target/
+xiwat-backend/.mvn/
+xiwat-backend/*.mv.db
+xiwat-backend/*.trace.db
+
+# --- Logs & Temp ---
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+
+# --- Editor & OS ---
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.sln
+*.sw?
+Thumbs.db
+
+# --- Vercel ---
+.vercel/

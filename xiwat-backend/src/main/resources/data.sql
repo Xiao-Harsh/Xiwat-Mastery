@@ -1,0 +1,7 @@
+INSERT INTO products (name, description, price, category, image, stock, rating, featured) VALUES 
+('Noir Chrono', 'A definitive statement in minimalism. Featuring a matte black stainless steel case and a premium Italian leather strap.', 12999.00, 'Chrono', 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?q=80&w=800&auto=format&fit=crop', 12, 4.8, true),
+('Argent Silver', 'Timeless silver accents paired with a stark white dial. The Argent series embodies pure elegance.', 9999.00, 'Classic', 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop', 20, 4.5, true),
+('Gilded Era', 'Muted gold casing with a deep emerald dial. A modern interpretation of classic luxury.', 15499.00, 'Limited', 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=800&auto=format&fit=crop', 5, 4.9, true),
+('Carbon Stealth', 'Ultra-lightweight carbon fiber case with a high-durability rubber strap for the active specialist.', 11200.00, 'Modern', 'https://images.unsplash.com/photo-1533139502658-0198f920d8e8?q=80&w=800&auto=format&fit=crop', 15, 4.6, false),
+('Oceanic Deep', 'Deep navy dial with brushed steel. Water-resistant up to 100 meters.', 13500.00, 'Classic', 'https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=800&auto=format&fit=crop', 8, 4.7, false),
+('Minimalist Blush', 'Soft rose gold tones with a minimalist beige strap. Subtle beauty in every second.', 8500.00, 'Modern', 'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=800&auto=format&fit=crop', 10, 4.4, false);

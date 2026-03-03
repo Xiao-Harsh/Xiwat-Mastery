@@ -1,0 +1,15 @@
+# --- Backend (Spring Boot) ---
+target/
+*.mv.db
+*.trace.db
+*.log
+
+# --- IDE & OS ---
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# --- Config ---
+.env
+application-prod.properties

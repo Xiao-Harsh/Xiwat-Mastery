@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-xiwat-white text-xiwat-black font-sans;
+  }
+
+  h1 {
+    @apply font-display;
+  }
+
+  h2 {
+    @apply font-display;
+  }
+
+  h3 {
+    @apply font-display;
+  }
+
+  h4 {
+    @apply font-display;
+  }
+
+  h5 {
+    @apply font-display;
+  }
+
+  h6 {
+    @apply font-display;
+  }
+}
+
+/* Custom transitions and utilities */
+.transition-luxury {
+  @apply transition-all duration-500 ease-in-out;
+}
+
+.glass-morphism {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+/* Premium Vault Login Styles */
+.vault-form {
+  @apply flex flex-col gap-4 bg-white p-10 w-full max-w-[450px] rounded-[30px] shadow-2xl border border-xiwat-lightgray relative overflow-hidden;
+}
+
+.vault-form::before {
+  content: '';
+  @apply absolute top-0 left-0 w-full h-1 bg-xiwat-gold opacity-50;
+}
+
+.vault-input-group {
+  @apply flex flex-col gap-2;
+}
+
+.vault-input-group label {
+  @apply text-xiwat-black font-semibold text-xs uppercase tracking-widest;
+}
+
+.vault-input-wrapper {
+  @apply border-[1.5px] border-xiwat-lightgray rounded-xl h-14 flex items-center px-4 transition-all duration-300;
+}
+
+.vault-input-wrapper:focus-within {
+  @apply border-xiwat-gold ring-1 ring-xiwat-gold/20 shadow-lg shadow-xiwat-gold/5;
+}
+
+.vault-input {
+  @apply flex-1 bg-transparent border-none outline-none text-xiwat-black text-sm;
+}
+
+.vault-button-submit {
+  @apply mt-6 mb-2 bg-xiwat-black text-white text-sm font-bold uppercase tracking-[0.2em] rounded-xl h-14 w-full cursor-pointer transition-all duration-300 hover:bg-xiwat-gray hover:shadow-xl active:scale-[0.98];
+}
+
+.vault-link {
+  @apply text-[10px] font-bold uppercase tracking-widest text-xiwat-gold hover:text-xiwat-black transition-colors cursor-pointer;
+}
+
+.vault-footer {
+  @apply mt-4 text-center text-[10px] text-gray-400 uppercase tracking-widest font-medium;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+.vault-form.has-error {
+  @apply border-red-500/50 shadow-red-500/10;
+}
+
+/* Premium Category Tabs (Pill Style) */
+.xiwat-tabs {
+  display: flex;
+  position: relative;
+  background-color: #fff;
+  padding: 0.25rem;
+  border-radius: 99px;
+  border: 1.5px solid #E5E5E5;
+  width: fit-content;
+}
+
+.xiwat-tabs * {
+  z-index: 10;
+}
+
+.xiwat-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 80px;
+  font-size: 10px;
+  color: #333333;
+  font-weight: 700;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  z-index: 20;
+}
+
+.xiwat-tab.active {
+  color: #FFFFFF;
+}
+
+.xiwat-glider {
+  position: absolute;
+  display: flex;
+  height: 32px;
+  width: 80px;
+  background-color: #111111;
+  /* Black theme to match luxury feel */
+  z-index: 5;
+  border-radius: 99px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
