@@ -1,15 +1,35 @@
-# --- Backend (Spring Boot) ---
+# --- Build & Output ---
 target/
+bin/
+out/
+
+# --- Database ---
 *.mv.db
 *.trace.db
+
+# --- Logs ---
 *.log
+logs/
 
 # --- IDE & OS ---
 .idea/
+*.iml
+*.iws
+*.ipr
 .vscode/
+.settings/
+.classpath
+.project
+.factorypath
 .DS_Store
 Thumbs.db
 
-# --- Config ---
+# --- Config & Secrets ---
 .env
 application-prod.properties
+application-dev.properties
+*.jks
+*.p12
+
+# --- Maven ---
+.mvn/
