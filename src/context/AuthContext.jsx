@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (email, password) => {
         try {
-            const response = await api.post('/api/login', { email, password });
+            const response = await api.post('/api/auth/login', { email, password });
 
             const data = response.data;
             const userData = {
@@ -51,7 +51,7 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (name, email, password) => {
         try {
-            await api.post('/api/register', { name, email, password });
+            await api.post('/api/auth/register', { name, email, password });
             return true;
         } catch (error) {
             console.error('Registration error:', error);
